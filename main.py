@@ -1,7 +1,20 @@
+#-----------------------------------------------LIBRERIAS/MODULOS--------------------------------------------
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
+#----------------------------------------------------CLASES--------------------------------------------------
+from Funciones import Analizador
+
+#-----------------------------------------------FILE CHOOSER-------------------------------------------------
+def obtenerArchivo():
+    Tk().withdraw() 
+    ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
+    print(ruta)
+    Analizador.leerArchivo(ruta)
 
 #-------------------------------------------------MENU-------------------------------------------------------
 def cargarArchivo():
-    print("Cargar Archivo")
+    obtenerArchivo()
 
 def listasOrdenadas():
     print("Cargar Archivo")
