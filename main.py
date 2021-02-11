@@ -7,10 +7,10 @@ from Funciones import Analizador
 
 #-----------------------------------------------FILE CHOOSER-------------------------------------------------
 def obtenerArchivo():
-    Tk().withdraw() 
-    ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
-    print(ruta)
-    Analizador.leerArchivo(ruta)
+    #Tk().withdraw() 
+    #ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
+    #print(ruta)
+    Analizador.leerArchivo("C:/Users/danie/Downloads/entrada1.txt")
 
 #-------------------------------------------------MENU-------------------------------------------------------
 def cargarArchivo():
