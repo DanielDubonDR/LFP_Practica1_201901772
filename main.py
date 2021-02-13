@@ -1,17 +1,19 @@
 #-----------------------------------------------LIBRERIAS/MODULOS--------------------------------------------
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
-
+Tk().withdraw()
 #----------------------------------------------------CLASES--------------------------------------------------
 from Funciones import Analizador
 
 #-----------------------------------------------FILE CHOOSER-------------------------------------------------
 def obtenerArchivo():
     #Tk().withdraw() 
-    #ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
-    #print(ruta)
-    Analizador.leerArchivo("C:/Users/danie/Downloads/entrada1.txt")
-
+    try:
+        ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
+        Analizador.leerArchivo(ruta)
+    except:
+        print("\n> ERROR: No se selecciono ningun archivo")
+        input("- PRESIONE ENTER PARA CONTINUAR...")
 #-------------------------------------------------MENU-------------------------------------------------------
 def cargarArchivo():
     obtenerArchivo()
