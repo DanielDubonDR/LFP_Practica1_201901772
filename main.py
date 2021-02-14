@@ -4,22 +4,30 @@ from tkinter.filedialog import askopenfilename
 Tk().withdraw()
 #----------------------------------------------------CLASES--------------------------------------------------
 from Funciones import Analizador
+from Funciones import Funciones
+
+#----------------------------------------------VARIABLES GLOBALES--------------------------------------------
+datos=[]
 
 #-----------------------------------------------FILE CHOOSER-------------------------------------------------
 def obtenerArchivo():
+    global datos
     #Tk().withdraw() 
     try:
-        ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
-        Analizador.leerArchivo(ruta)
+        #ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
+        Analizador.leerArchivo("C:/Users/danie/Downloads/entrada1.txt")
+        datos=Analizador.getDatos()
+        
     except:
         print("\n> ERROR: No se selecciono ningun archivo")
         input("- PRESIONE ENTER PARA CONTINUAR...")
+
 #-------------------------------------------------MENU-------------------------------------------------------
 def cargarArchivo():
     obtenerArchivo()
 
 def listasOrdenadas():
-    print("Cargar Archivo")
+    print("Ca")
 
 def busquedas():
     print("Cargar Archivo")
@@ -43,8 +51,13 @@ def menu():
         print(" 4. Desplegar todas")
         print(" 5. Desplegar todas a archivo")
         print(" 6. Salir\n")
-        opcion=int(input("- Ingrese una opción\n  > "))
+        opcion=int(input("- Ingrese una opción:\n  > "))
         switch={1:cargarArchivo, 2: listasOrdenadas, 3: busquedas, 4: todo, 5: desplegarTodo, 6: salir}
-        func=switch.get(opcion,"Opcion invalida")
-        func()
+        func=switch.get(opcion,"Opción inválida")
+        try:
+            func()
+        except:
+            print("\n > Opción inválida...")
+            input(" - PRESIONE ENTER PARA CONTINUAR...")
 menu()
+
