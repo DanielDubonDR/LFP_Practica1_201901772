@@ -17,23 +17,22 @@ def obtenerArchivo():
         #ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
         Analizador.leerArchivo("C:/Users/danie/Downloads/entrada1.txt")
         datos=Analizador.getDatos()
-        
     except:
-        print("\n> ERROR: No se selecciono ningun archivo")
-        input("- PRESIONE ENTER PARA CONTINUAR...")
+        print(" > ERROR: No se selecciono ningun archivo")
+        input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 #-------------------------------------------------MENU-------------------------------------------------------
 def cargarArchivo():
     obtenerArchivo()
 
 def listasOrdenadas():
-    print("Ca")
+    Funciones.listasOrdenadas(datos)
 
 def busquedas():
-    print("Cargar Archivo")
+    Funciones.busquedas(datos)
 
 def todo():
-    print("Cargar Archivo")
+    Funciones.deplegarTodas(datos)
 
 def desplegarTodo():
     print("Cargar Archivo")

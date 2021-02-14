@@ -11,7 +11,7 @@ operacionB=None
 splt=None
 
 def leerArchivo(ruta):
-    print("\n---------------------------------ARCHIVO ANALIZADO---------------------------------\n")
+    print("\n----------------------------------CARGAR ARCHIVO----------------------------------\n")
     global contador
     archivo=open(ruta,'r')
     for linea in archivo.readlines():
@@ -19,12 +19,13 @@ def leerArchivo(ruta):
         obtenerIdentificador(linea)
         contador+=1
     archivo.close()
+    print(" > Archivo cargado con éxito")
     input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 def obtenerIdentificador(linea):
     global identificador
     splt=linea.split("=")
-    identificador=splt[0]
+    identificador=splt[0].replace(" ","")
     #print(" > Identificador = "+identificador)
     obtenerNumeros(splt[1])
 
@@ -79,7 +80,8 @@ def obtenerNumeroBuscar(op):
     #print(" > Valor_a_buscar = ",op)
     if op.isnumeric():
         valorBuscar=op
-        print(" > Valor_a_buscar = ",op)
+        valorBuscar=int(valorBuscar)
+        #print(" > Valor_a_buscar = ",op)
     else:
         valorBuscar=None
     llenarDatos()
