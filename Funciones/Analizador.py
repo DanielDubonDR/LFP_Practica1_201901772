@@ -11,6 +11,7 @@ operacionB=None
 splt=None
 
 def leerArchivo(ruta):
+    datos.clear()
     print("\n----------------------------------CARGAR ARCHIVO----------------------------------\n")
     global contador
     archivo=open(ruta,'r')

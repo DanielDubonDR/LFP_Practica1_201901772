@@ -5,6 +5,7 @@ Tk().withdraw()
 #----------------------------------------------------CLASES--------------------------------------------------
 from Funciones import Analizador
 from Funciones import Funciones
+from Funciones import Reportes
 
 #----------------------------------------------VARIABLES GLOBALES--------------------------------------------
 datos=[]
@@ -35,7 +36,7 @@ def todo():
     Funciones.deplegarTodas(datos)
 
 def desplegarTodo():
-    print("Cargar Archivo")
+    Reportes.reporte(datos)
 
 def salir():
     print("  > Saliendo...\n")
