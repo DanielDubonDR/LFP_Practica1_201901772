@@ -9,17 +9,18 @@ from Funciones import Reportes
 
 #----------------------------------------------VARIABLES GLOBALES--------------------------------------------
 datos=[]
-
+ruta=""
 #-----------------------------------------------FILE CHOOSER-------------------------------------------------
 def obtenerArchivo():
     global datos
+    global ruta
     #Tk().withdraw() 
     try:
-        #ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
-        Analizador.leerArchivo("C:/Users/danie/Downloads/entrada1.txt")
+        ruta = askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) 
+        Analizador.leerArchivo(ruta)
         datos=Analizador.getDatos()
     except:
-        print(" > ERROR: No se selecciono ningun archivo")
+        print(" > ERROR: No se seleccionó ningún archivo")
         input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 #-------------------------------------------------MENU-------------------------------------------------------
@@ -27,16 +28,32 @@ def cargarArchivo():
     obtenerArchivo()
 
 def listasOrdenadas():
-    Funciones.listasOrdenadas(datos)
+    if ruta!="":
+        Funciones.listasOrdenadas(datos)
+    else:
+        print("  > ERROR: No se ha cargado ningún archivo")
+        input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 def busquedas():
-    Funciones.busquedas(datos)
+    if ruta!="":
+        Funciones.busquedas(datos)
+    else:
+        print("  > ERROR: No se ha cargado ningún archivo")
+        input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 def todo():
-    Funciones.deplegarTodas(datos)
+    if ruta!="":
+        Funciones.deplegarTodas(datos)
+    else:
+        print("  > ERROR: No se ha cargado ningún archivo")
+        input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 def desplegarTodo():
-    Reportes.reporte(datos)
+    if ruta!="":
+        Reportes.reporte(datos)
+    else:
+        print("  > ERROR: No se ha cargado ningún archivo")
+        input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 def salir():
     print("  > Saliendo...\n")
