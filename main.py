@@ -20,7 +20,7 @@ def obtenerArchivo():
         Analizador.leerArchivo(ruta)
         datos=Analizador.getDatos()
     except:
-        print(" > ERROR: No se seleccionó ningún archivo")
+        print(" > ERROR: No se seleccionó ningún archivo o el archivo no cumple con el formato")
         input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 #-------------------------------------------------MENU-------------------------------------------------------

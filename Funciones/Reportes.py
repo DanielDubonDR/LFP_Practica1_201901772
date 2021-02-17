@@ -2,6 +2,7 @@ import os
 texto=""
 def cabecera():
     global texto
+    texto=""
     c="""<!DOCTYPE html>
         <html>
             <title>Reporte</title>
