@@ -108,4 +108,7 @@ def reporte(datos):
     </body>
 </html>"""
     crearArchivo()
-    #print(texto)
+    print("\n-------------------------------------- REPORTE --------------------------------------")
+    print("\n  > Reporte generado")
+    print("  > Reporte abierto")
+    input("\n- PRESIONE ENTER PARA CONTINUAR...")
