@@ -56,6 +56,9 @@ def desplegarTodo():
         input("\n- PRESIONE ENTER PARA CONTINUAR...")
 
 def salir():
+    print("\n  > Autor: Daniel Reginaldo Dubón Rodríguez")
+    print("  > Carné: 201901772")
+    print("  > Carrera: Ingeniería en Ciencias y Sistemas\n")
     print("  > Saliendo...\n")
 
 def menu():
